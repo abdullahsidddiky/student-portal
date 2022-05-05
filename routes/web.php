@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/admin',[AdminController::class,'show']);
+Route::get('/admin_register',[AdminController::class,'register_admin'])->name('register_admin');

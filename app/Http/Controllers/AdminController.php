@@ -10,7 +10,7 @@ class AdminController extends Controller
     public function show(){
       return view('admin.AdminHome');
     }
-    pubic function register_admin(){
-      return "register";
+    public function register_admin(){
+      return view('admin.AdminRegistration');
     }
 }
