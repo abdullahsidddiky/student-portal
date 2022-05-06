@@ -14,6 +14,7 @@ class AdminController extends Controller
       return view('admin.AdminRegistration');
     }
     public function store_admin(request $request){
-      dd($request->name);
+      dd($request->name,$request->email,$request->password);
+
     }
 }
