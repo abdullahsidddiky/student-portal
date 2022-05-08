@@ -6,8 +6,6 @@
   </head>
   <body>
     <h1>Home Page</h1>
-    <form action="/home" method="POST">
-
-    </form>
+     <button onclick="window.location.href='{{route('login')}}';">Login</button>
   </body>
 </html>
