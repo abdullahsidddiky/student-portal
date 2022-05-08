@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\User;
+use App\Models\User;
 class AdminController extends Controller
 {
     //
@@ -27,6 +27,13 @@ class AdminController extends Controller
           'password'=>'required'
         ]);
         //dd($validated->name,$validated->email,$validated->password);
-        dd($request);
+        //dd($request);
+        $user =new User();
+        $user->name = $request->name;
+        $user->email=$request->email;
+        $user->password=$request->password;
+        $user->is_admin=1;
+        $user->is_supervisor=0;
+        $user->save();
     }
 }
