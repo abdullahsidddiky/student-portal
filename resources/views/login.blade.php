@@ -5,6 +5,23 @@
     <title>login</title>
   </head>
   <body>
-    <h1>login Page</h1>
+    <h1>Login Page</h1>
+    <form action="/login" method="POST">
+      {{csrf_field()}}
+      <div class="form-group">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" class="form-control">
+        </div>
+        <div class="from-group">
+          <label for="password">password</label>
+          <input type="password" name="password" id="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+    </form>
   </body>
 </html>
