@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,3 @@ Route::get('/home', function () {
 Route::get('/admin',[AdminController::class,'show']);
 Route::get('/admin_register',[AdminController::class,'register_admin'])->name('register_admin');
 Route::post('/admin_register',[AdminController::class,'store_admin']);
-Route::get('/login',function(){
-  return view('login');
-})->name('login');
