@@ -9,5 +9,6 @@
     <form>
       <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register" />
     </form>
+  
   </body>
 </html>

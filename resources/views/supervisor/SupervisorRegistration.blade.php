@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Register as Supervisor</h1>
-    <form method="POST" action="/admin_register">
+    <form method="POST" action="/supervisor_register">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name:</label>

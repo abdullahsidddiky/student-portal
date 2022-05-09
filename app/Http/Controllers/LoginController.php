@@ -17,7 +17,12 @@ class LoginController extends Controller
         'password'=>['required'],
       ]);
       if(Auth::attempt($credentials)){
-        return "logged";
+        $user=Auth::user();
+        if($user->is_admin){
+          //return view('admin.AdminHome');
+          return redirect()->route('adminhome');
+        }
+        //return view('admin.AdminHome',['user'=>$user]);
       }
       return back()->withErrors([
              'email' => 'The provided credentials do not match our records.',

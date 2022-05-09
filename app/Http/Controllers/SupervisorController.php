@@ -9,7 +9,7 @@ class SupervisorController extends Controller
 {
     //
     public function show(){
-      
+      return view('superviosor.SuperverRegistration');
     }
     public function store_supervisor(Request $request){
       $request->validate([
