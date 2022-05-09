@@ -20,7 +20,7 @@ class LoginController extends Controller
         $user=Auth::user();
         if($user->is_admin){
           //return view('admin.AdminHome');
-          return redirect()->route('adminhome');
+          return redirect()->route('adminhome',$user);
         }
         //return view('admin.AdminHome',['user'=>$user]);
       }
