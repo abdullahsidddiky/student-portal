@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     //
@@ -31,7 +32,7 @@ class AdminController extends Controller
         $user =new User();
         $user->name = $request->name;
         $user->email=$request->email;
-        $user->password=$request->password;
+        $user->password=Hash::make($request->password);
         $user->is_admin=1;
         $user->is_supervisor=0;
         $user->save();
