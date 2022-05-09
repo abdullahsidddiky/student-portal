@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 class SupervisorController extends Controller
 {
     //
+    public function show(){
+      
+    }
     public function store_supervisor(Request $request){
       $request->validate([
         'name'=>'required',
@@ -20,6 +23,6 @@ class SupervisorController extends Controller
       $user->password= Hash::make($request->password);
       $user->is_admin=0;
       $user->is_supervisor=1;
-      $user->save(); 
+      $user->save();
     }
 }
