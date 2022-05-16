@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Admin page</h1>
-    
+    {{ session()->get( 'user' ) }}
     <form>
       <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register" />
     </form>
