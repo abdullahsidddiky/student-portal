@@ -6,6 +6,7 @@
   </head>
   <body>
     <h1>Admin page</h1>
+    
     <form>
       <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register" />
     </form>
