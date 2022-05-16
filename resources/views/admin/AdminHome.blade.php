@@ -9,8 +9,11 @@
     @php
       $user = session()->get('user');
     @endphp
-    {{$user->name}}
-    {{$user->is_admin}}
+    @if ($user->is_admin)
+      <h1>yes it is</h1>
+    @else
+      <h1>no its not</h1>
+    @endif
     <form>
       <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register" />
     </form>
