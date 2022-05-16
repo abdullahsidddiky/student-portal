@@ -6,7 +6,10 @@
   </head>
   <body>
     <h1>Admin page</h1>
-    {{ session()->get( 'user' ) }}
+    @php
+      $user = session()->get('user');
+    @endphp
+    {{$user->name}}
     <form>
       <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register" />
     </form>
