@@ -10,12 +10,17 @@
       $user = session()->get('user');
     @endphp
     @if ($user->is_admin)
-      <h1>yes it is</h1>
+      <form>
+        <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register Supervisor" />
+      </form>
+      <br>
+       <form>
+          <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register Student" />
+        </form>
     @else
-      <h1>no its not</h1>
+      <form>
+        <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register Admin" />
+      </form>
     @endif
-    <form>
-      <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register" />
-    </form>
   </body>
 </html>
