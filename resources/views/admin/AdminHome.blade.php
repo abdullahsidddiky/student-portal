@@ -10,6 +10,7 @@
       $user = session()->get('user');
     @endphp
     {{$user->name}}
+    {{$user->is_admin}}
     <form>
       <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register" />
     </form>
