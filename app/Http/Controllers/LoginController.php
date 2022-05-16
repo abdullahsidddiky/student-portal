@@ -19,8 +19,10 @@ class LoginController extends Controller
       if(Auth::attempt($credentials)){
         $user=Auth::user();
         if($user->is_admin){
-          //return view('admin.AdminHome');
-          return redirect()->route('adminhome',$user);
+        //  return redirect()->route('adminhome',['user'=>'$user']);
+        //return view('admin.AdminHome',['user'=>$user]);
+        //return redirect('AdminHome');
+        return redirect()->route('adminhome',$user->name);
         }
         //return view('admin.AdminHome',['user'=>$user]);
       }
