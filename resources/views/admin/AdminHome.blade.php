@@ -15,7 +15,7 @@
       </form>
       <br>
        <form>
-          <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register Student" />
+          <input type="button" onclick="window.location.href='{{route('register_student')}}';" value="Register Student" />
         </form>
     @else
       <form>

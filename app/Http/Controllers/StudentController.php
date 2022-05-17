@@ -9,6 +9,20 @@ class StudentController extends Controller
   public function show(){
     return view('student.StudentRegistration');
   }
+  public function store_student(Request $request){
+    $request->validate([
+      'name'=>'required',
+      'email'=>'required|email',
+      'password'=>'required'
+    ]);
+    $user = new User();
+    $user->name= $request->name;
+    $user->email= $request->email;
+    $user->password= Hash::make($request->password);
+    $user->is_admin=0;
+    $user->is_supervisor=0;
+    $user->save();
+  }
 
 
 }

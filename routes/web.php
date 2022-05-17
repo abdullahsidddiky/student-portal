@@ -30,3 +30,4 @@ Route::post('/login',[LoginController::class,'show_logged'])->name('logged');
 Route::get('/supervisor_register',[SupervisorController::class,'show'])->name('register_supervisor');
 Route::post('/supervisor_register',[SupervisorController::class, 'store_supervisor']);
 Route::get('/student_register',[StudentController::class,'show'])->name('register_student');
+Route::post('/student_register',[StudentController::class,'store_student'])->name('store_student');
