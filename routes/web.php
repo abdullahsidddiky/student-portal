@@ -26,4 +26,5 @@ Route::get('/admin_register',[AdminController::class,'register_admin'])->name('r
 Route::post('/admin_register',[AdminController::class,'store_admin']);
 Route::get('/login',[LoginController::class,'show_logpage'])->name('login');
 Route::post('/login',[LoginController::class,'show_logged'])->name('logged');
-Route::get('/supervisor_register',[SupervisorController::class,'show']);
+Route::get('/supervisor_register',[SupervisorController::class,'show'])->name('register_supervisor');
+Route::post('/supervisor_register',[SupervisorController::class, 'store_supervisor']);

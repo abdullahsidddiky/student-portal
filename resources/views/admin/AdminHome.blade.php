@@ -11,7 +11,7 @@
     @endphp
     @if ($user->is_admin)
       <form>
-        <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register Supervisor" />
+        <input type="button" onclick="window.location.href='{{route('register_supervisor')}}';" value="Register Supervisor" />
       </form>
       <br>
        <form>

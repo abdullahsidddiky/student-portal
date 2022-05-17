@@ -5,7 +5,7 @@
     <title>Supervisor page</title>
   </head>
   <body>
-    <h1>Register as Supervisor</h1>
+    <h1>Register Supervisor</h1>
     <form method="POST" action="/supervisor_register">
         {{ csrf_field() }}
         <div class="form-group">
