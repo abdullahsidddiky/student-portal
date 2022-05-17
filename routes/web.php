@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SupervisorController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,4 @@ Route::get('/login',[LoginController::class,'show_logpage'])->name('login');
 Route::post('/login',[LoginController::class,'show_logged'])->name('logged');
 Route::get('/supervisor_register',[SupervisorController::class,'show'])->name('register_supervisor');
 Route::post('/supervisor_register',[SupervisorController::class, 'store_supervisor']);
+Route::get('/student_register',[StudentController::class,'show'])->name('register_student');
