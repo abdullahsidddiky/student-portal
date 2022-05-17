@@ -24,17 +24,19 @@ class LoginController extends Controller
         else if($user->is_supervisor){
           return redirect()->route('supervisor_page',[$user->name])->with('user',$user);
         }
-      //  else if(($user->is_admin && $user->is_supervisor) == FALSE){
-      //    return redirect()->route('supervisor_page',[$user->name])->with('user',$user);
-      //  }
+        /*else if(($user->is_admin && $user->is_supervisor) == FALSE){
+            return redirect()->route('student_page',[$user->name])->with('user',$user);
+        }*/
+        else {
+          return redirect()->route('student_page',[$user->name])->with('user',$user);
+        }
 
       }
-    //  else {
-      //  return redirect()->route('student_page');
-    //  }
+      else {
       return back()->withErrors([
              'email' => 'The provided credentials do not match our records.',
          ])->onlyInput('email');
+       }
 
 }
 }
