@@ -22,7 +22,7 @@ class LoginController extends Controller
         return redirect()->route('adminhome',[$user->name])->with('user',$user);
         //return redirect()->route('adminhome',$user->name);
         }
-        //return view('admin.AdminHome',['user'=>$user]);
+        
       }
       return back()->withErrors([
              'email' => 'The provided credentials do not match our records.',
