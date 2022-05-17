@@ -23,11 +23,17 @@ Route::get('/home', function () {
     return view('home');
 });
 Route::get('/admin',[AdminController::class,'show'])->name('adminhome'); //admin home page
+
 Route::get('/admin_register',[AdminController::class,'register_admin'])->name('register_admin');
 Route::post('/admin_register',[AdminController::class,'store_admin']);
+
 Route::get('/login',[LoginController::class,'show_logpage'])->name('login');
 Route::post('/login',[LoginController::class,'show_logged'])->name('logged');
+
 Route::get('/supervisor_register',[SupervisorController::class,'show'])->name('register_supervisor');
 Route::post('/supervisor_register',[SupervisorController::class, 'store_supervisor']);
+Route::get('/supervisor',[SupervisorController::class,'redirect_supervisor_page'])->name('supervisor_page');
+
 Route::get('/student_register',[StudentController::class,'show'])->name('register_student');
 Route::post('/student_register',[StudentController::class,'store_student']);
+Route::get('/student',[StudentController::class,'redirect_student_page'])->name('student_page');

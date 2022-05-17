@@ -20,10 +20,18 @@ class LoginController extends Controller
         $user=Auth::user();
         if($user->is_admin){
         return redirect()->route('adminhome',[$user->name])->with('user',$user);
-        //return redirect()->route('adminhome',$user->name);
         }
-        
+        else if($user->is_supervisor){
+          return redirect()->route('supervisor_page',[$user->name])->with('user',$user);
+        }
+      //  else if(($user->is_admin && $user->is_supervisor) == FALSE){
+      //    return redirect()->route('supervisor_page',[$user->name])->with('user',$user);
+      //  }
+
       }
+    //  else {
+      //  return redirect()->route('student_page');
+    //  }
       return back()->withErrors([
              'email' => 'The provided credentials do not match our records.',
          ])->onlyInput('email');

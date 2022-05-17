@@ -25,4 +25,7 @@ class SupervisorController extends Controller
       $user->is_supervisor=1;
       $user->save();
     }
+    public function redirect_supervisor_page(){
+      return view('supervisor');
+    }
 }
