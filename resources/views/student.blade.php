@@ -5,6 +5,6 @@
     <title>student</title>
   </head>
   <body>
-    <h1>student Page</h1>
+    <h1>Student Page</h1>
   </body>
 </html>
