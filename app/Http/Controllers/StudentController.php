@@ -27,6 +27,7 @@ class StudentController extends Controller
     $user->is_admin=0;
     $user->is_supervisor=0;
     $user->save();
+    $student->save();
   }
   public function redirect_student_page(){
     return view('student');
