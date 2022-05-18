@@ -19,6 +19,6 @@ class student extends Model
           return $this->belongsTo('App\Models\User');
     }
     public function grade(){
-        //  return $this->hasMany('App\Models\G')
+          return $this->hasMany('App\Models\Grade');
     }
 }
