@@ -17,7 +17,7 @@ class StudentController extends Controller
       'email'=>'required|email',
       'password'=>'required'
     ]);
-    $user = new User();
+    /*$user = new User();
     $student = new student();
     $student->name = $request->name;
     $student->email = $request->email;
@@ -27,7 +27,18 @@ class StudentController extends Controller
     $user->is_admin=0;
     $user->is_supervisor=0;
     $user->save();
-    $student->save();
+    $student->save();*/
+    $user = new User();
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->password = Hash::make($request->password);
+    $user->is_admin = 0;
+    $user->is_supervisor = 0;
+    $user->save();
+    $student = new student();
+    $student->name = $request->name;
+    $student->email = $request->email;
+    $user->student()->save($student);
   }
   public function redirect_student_page(){
     return view('student');

@@ -15,5 +15,7 @@ class student extends Model
     protected $hidden = [
 
     ];
-    
+    public function add_student(){
+          return $this->belongsTo('App\Models\User');
+    }
 }
