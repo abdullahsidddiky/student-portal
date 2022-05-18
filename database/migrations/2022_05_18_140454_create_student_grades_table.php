@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('student_grades', function (Blueprint $table) {
             $table->id();
-            
-
+            $table->string('course_name');
+            $table->string('grade');
+            $table->integer('student_id')->unsigned();
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->timestamps();
         });
     }
