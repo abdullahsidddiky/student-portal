@@ -42,4 +42,7 @@ class AdminController extends Controller
       $subject->save();
       return redirect()->route('subject');
     }
+    public function course(){
+      return view('course');
+    }
 }

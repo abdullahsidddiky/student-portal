@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    <h1>Course</h1>
     <form action="/course">
   <input list="browsers" name="browser">
   <datalist id="browsers">
