@@ -34,13 +34,14 @@ class AdminController extends Controller
       return view('subject');
     }
     public function store_subject(Request $request){
-      //$credentials = $request->validate([
-    //    'subject_name'=>['required'],
-    //  ]);
+      $credentials = $request->validate([
+        'name'=>['required'],
+      ]);
       $subject = new subject();
-      $subject->name = $request->name;
-      dd($request);
-      //$subject->save();
-      return redirect()->route('login');
+      $subject->course_name = $request->name;
+      //dd($request->name);
+      //dd($subject->course_name);
+      $subject->save();
+      return redirect()->route('subject');
     }
 }
