@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\subject;
 use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
@@ -28,5 +29,18 @@ class AdminController extends Controller
         $user->is_admin=1;
         $user->is_supervisor=0;
         $user->save();
+    }
+    public function subject(){
+      return view('subject');
+    }
+    public function store_subject(Request $request){
+      //$credentials = $request->validate([
+    //    'subject_name'=>['required'],
+    //  ]);
+      $subject = new subject();
+      $subject->name = $request->name;
+      dd($request);
+      //$subject->save();
+      return redirect()->route('login');
     }
 }

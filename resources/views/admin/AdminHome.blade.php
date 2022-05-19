@@ -11,6 +11,10 @@
     @endphp
     @if ($user->is_admin)
       <form>
+        <input type="button" onclick="window.location.href='{{route('subject')}}';" value="Create subject" />
+      </form>
+      <br>
+      <form>
         <input type="button" onclick="window.location.href='{{route('register_supervisor')}}';" value="Register Supervisor" />
       </form>
       <br>
