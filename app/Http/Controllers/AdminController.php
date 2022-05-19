@@ -39,8 +39,6 @@ class AdminController extends Controller
       ]);
       $subject = new subject();
       $subject->course_name = $request->name;
-      //dd($request->name);
-      //dd($subject->course_name);
       $subject->save();
       return redirect()->route('subject');
     }
