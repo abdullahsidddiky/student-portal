@@ -31,7 +31,12 @@ return new class extends Migration
      */
     public function down()
     {
+
+        Schema::dropIfExists('student_grades');
         Schema::dropIfExists('students');
+        
+
+        //Schema::dropForeign('users_user_id_foreign');
 
 
     }
