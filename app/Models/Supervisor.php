@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Supervisor extends Model
 {
     use HasFactory;
+    protected $fillable = [
+      'name',
+      'email'
+    ];
+    protected $hidden = [
+
+    ];
+    public function user(){
+        return $this->belognsTo('App\Models\User');
+    }
 }
