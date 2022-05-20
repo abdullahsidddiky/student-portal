@@ -7,6 +7,7 @@
   <body>
     <h1>Course</h1>
     <form action="/course">
+  <label for="subject_name">Subject Name</label>
   <input list="course" name="course">
   <datalist id="course">
     @foreach ($subject as $subject)
@@ -15,8 +16,5 @@
   </datalist>
   <input type="submit">
 </form>
-
-
-
-  </body>
+</body>
 </html>
