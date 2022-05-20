@@ -7,16 +7,16 @@
   <body>
     <h1>Course</h1>
     <form action="/course">
-  <input list="browsers" name="browser">
-  <datalist id="browsers">
-    <option value="Internet Explorer">
-    <option value="Firefox">
-    <option value="Chrome">
-    <option value="Opera">
-    <option value="Safari">
+  <input list="course" name="course">
+  <datalist id="course">
+    @foreach ($subject as $subject)
+    <option value="{{$subject->course_name}}"></option>
+    @endforeach
   </datalist>
   <input type="submit">
 </form>
+
+
 
   </body>
 </html>

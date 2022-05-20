@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\subject;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     //
@@ -43,6 +44,8 @@ class AdminController extends Controller
       return redirect()->route('subject');
     }
     public function course(){
-      return view('course');
+      $subject = DB::table  ('subjects')->get();
+
+      return view('course',['subject'=>$subject]);
     }
 }
