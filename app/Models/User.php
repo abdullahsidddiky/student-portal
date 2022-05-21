@@ -47,5 +47,8 @@ class User extends Authenticatable
       public function student(){
         return $this->hasOne('App\Models\student');
       }
+      public function supervisor(){
+        return $this->hasOne('App\Models\Supervisor');
+      }
 
 }

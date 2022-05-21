@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('grades', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('course_name');
-            $table->string('grade');
-            $table->integer('student_id')->unsigned();
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->integer('supervisor_id')->unsigned();
+            $table->foreign('supervisor_id')->references('id')->on('supervisors')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('supervisor_name');
+            $table->string('course_name')->nullable();
+            $table->integer('section')->unique();
             $table->timestamps();
         });
     }
@@ -30,8 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-      
-        Schema::dropIfExists('grades');
-
+        Schema::dropIfExists('courses');
     }
 };

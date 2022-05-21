@@ -11,6 +11,7 @@ class Grade extends Model
     protected $fillable =[
       'course_name',
       'grade',
+
     ];
     protected $hidden = [
 

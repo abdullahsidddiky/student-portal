@@ -17,17 +17,7 @@ class StudentController extends Controller
       'email'=>'required|email',
       'password'=>'required'
     ]);
-    /*$user = new User();
-    $student = new student();
-    $student->name = $request->name;
-    $student->email = $request->email;
-    $user->name= $request->name;
-    $user->email= $request->email;
-    $user->password= Hash::make($request->password);
-    $user->is_admin=0;
-    $user->is_supervisor=0;
-    $user->save();
-    $student->save();*/
+
     $user = new User();
     $user->name = $request->name;
     $user->email = $request->email;
