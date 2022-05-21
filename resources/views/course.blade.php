@@ -6,15 +6,25 @@
   </head>
   <body>
     <h1>Course</h1>
-    <form action="/course">
+    <form action="/course" method="POST">
+      {{csrf_field()}}
   <label for="subject_name">Subject Name</label>
-  <input list="course" name="course">
-  <datalist id="course">
+  <input list="subject" name="subject">
+  <datalist id="subject" name = "subject">
     @foreach ($subject as $subject)
     <option value="{{$subject->course_name}}"></option>
     @endforeach
   </datalist>
-  <input type="submit">
+  <br>
+  <label for="faculty_name">faculty Name</label>
+  <input list="faculty" name="faculty">
+
+  <datalist id="faculty">
+    @foreach ($faculty as $faculty)
+    <option value="{{$faculty->name}}"></option>
+    @endforeach
+  </datalist>
+  <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
 </form>
 </body>
 </html>

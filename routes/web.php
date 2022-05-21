@@ -27,6 +27,7 @@ Route::get('/admin',[AdminController::class,'show'])->name('adminhome'); //admin
 Route::get('/admin_register',[AdminController::class,'register_admin'])->name('register_admin');
 Route::post('/admin_register',[AdminController::class,'store_admin']);
 Route::get('/course',[AdminController::class,'course'])->name('create_course');
+Route::post('/course',[AdminController::class,'store_course']);
 Route::get('/subject',[AdminController::class,'subject'])->name('subject');
 Route::post('/subject',[AdminController::class,'store_subject'])->name('store_subject');
 

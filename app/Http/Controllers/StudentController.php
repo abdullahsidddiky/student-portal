@@ -17,7 +17,7 @@ class StudentController extends Controller
       'email'=>'required|email',
       'password'=>'required'
     ]);
-    
+
     $user = new User();
     $user->name = $request->name;
     $user->email = $request->email;

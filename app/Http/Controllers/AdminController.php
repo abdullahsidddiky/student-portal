@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\subject;
+use App\Models\Course;
+use App\Models\Supervisor;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
@@ -45,7 +47,24 @@ class AdminController extends Controller
     }
     public function course(){
       $subject = DB::table  ('subjects')->get();
+      $faculty = DB::table('supervisors')->get();
+      return view('course',['subject'=>$subject,'faculty'=>$faculty]);
+    }
+    public function store_course(Request $request){
+       $request->validate([
+         'subject'=>'required',
+         'faculty'=>'required',
+       ]);
+       //$faculty = DB::table('supervisors')->where('name', $request->faculty)->first();
+       //$posts = Post::where('user_id', $user->id)->get();
+       $faculty = Supervisor::where('name', $request->faculty)->first();
 
-      return view('course',['subject'=>$subject]);
+       $course = new Course();
+
+       $course->supervisor_name= $faculty->name;
+       $course->course_name = $request->subject;
+       //dd($course);
+       $faculty->courses()->save($course);
+
     }
 }

@@ -18,4 +18,7 @@ class Supervisor extends Model
     public function user(){
         return $this->belognsTo('App\Models\User');
     }
+    public function courses(){
+      return $this->hasMany('App\Models\Course');
+    }
 }
