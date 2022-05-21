@@ -24,6 +24,9 @@
     <option value="{{$faculty->name}}"></option>
     @endforeach
   </datalist>
+  <br>
+  <label for="section">section</label>
+  <input type="text" name="section"  >
   <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
 </form>
 </body>

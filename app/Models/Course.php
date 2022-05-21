@@ -12,7 +12,7 @@ class Course extends Model
     'supervisor_id',
     'supervisor_name',
     'course_name',
-    //'section',
+    'section',
 
   ];
   protected $hidden = [

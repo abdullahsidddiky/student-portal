@@ -54,6 +54,8 @@ class AdminController extends Controller
        $request->validate([
          'subject'=>'required',
          'faculty'=>'required',
+         'section'=>'required|unique:courses,section',
+         //required|unique:posts,title
        ]);
        //$faculty = DB::table('supervisors')->where('name', $request->faculty)->first();
        //$posts = Post::where('user_id', $user->id)->get();
@@ -63,7 +65,8 @@ class AdminController extends Controller
 
        $course->supervisor_name= $faculty->name;
        $course->course_name = $request->subject;
-       //dd($course);
+       $course->section = $request->section;
+       //dd($course->section);
        $faculty->courses()->save($course);
 
     }

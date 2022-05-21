@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('supervisor_id')->references('id')->on('supervisors')->onDelete('cascade')->onUpdate('cascade');
             $table->string('supervisor_name');
             $table->string('course_name')->nullable();
-            $table->integer('section')->increments()->nullable();
+            $table->integer('section')->unique();
             $table->timestamps();
         });
     }
