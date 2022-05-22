@@ -31,7 +31,7 @@ class StudentController extends Controller
     $user->student()->save($student);
   }
   public function redirect_student_page(){
-    return view('student');
+    return view('student.student');
   }
 
 }
