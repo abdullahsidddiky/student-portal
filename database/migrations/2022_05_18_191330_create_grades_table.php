@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
             $table->string('course_name');
-            $table->string('grade');
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->string('supervisor_name');
+            $table->integer('supervisor_id');
+            $table->string('grade');
             $table->timestamps();
         });
     }
@@ -30,7 +32,7 @@ return new class extends Migration
      */
     public function down()
     {
-      
+
         Schema::dropIfExists('grades');
 
     }
