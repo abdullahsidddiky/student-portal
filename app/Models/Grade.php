@@ -9,7 +9,12 @@ class Grade extends Model
 {
     use HasFactory;
     protected $fillable =[
+
       'course_name',
+      'student_id',
+      'supervisor_name',
+      'supervisor_id',
+      'section',
       'grade',
 
     ];

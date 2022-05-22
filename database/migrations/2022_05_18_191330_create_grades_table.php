@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->string('supervisor_name');
             $table->integer('supervisor_id');
+            $table->integer('section');
             $table->string('grade')->nullable();
             $table->timestamps();
         });
