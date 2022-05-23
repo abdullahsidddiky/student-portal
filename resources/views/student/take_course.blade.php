@@ -21,6 +21,7 @@
           <th>Course Name</th>
           <th>Faculty Name</th>
           <th>Section</th>
+          <th>Select</th>
         </tr>
       @foreach ($course as $course)
           <tr>
