@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('course_name')->unique();
             $table->integer('student_id')->unsigned();
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
             $table->string('supervisor_name');
             $table->integer('supervisor_id');
             $table->integer('section');

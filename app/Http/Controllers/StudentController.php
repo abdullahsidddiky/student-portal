@@ -37,7 +37,7 @@ class StudentController extends Controller
   }
   public function take_course(){
     $course  = DB::table('courses')->get();
-
+    //$faculty = DB::table('')
     return view ('student.take_course',['course'=>$course]);
   }
 
