@@ -41,3 +41,4 @@ Route::get('/supervisor',[SupervisorController::class,'redirect_supervisor_page'
 Route::get('/student_register',[StudentController::class,'show'])->name('register_student');
 Route::post('/student_register',[StudentController::class,'store_student']);
 Route::get('/student',[StudentController::class,'redirect_student_page'])->name('student_page');
+Route::get('/advising_window',[StudentController::class,'take_course'])->name('take_course');

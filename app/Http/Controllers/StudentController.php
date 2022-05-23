@@ -33,5 +33,8 @@ class StudentController extends Controller
   public function redirect_student_page(){
     return view('student.student');
   }
+  public function take_course(){
+    return view ('student.take_course');
+  }
 
 }
