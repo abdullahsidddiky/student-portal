@@ -6,5 +6,9 @@
   </head>
   <body>
       <h1>Take Course</h1>
+
+    @foreach ($course as $course)
+    
+    @endforeach
   </body>
 </html>

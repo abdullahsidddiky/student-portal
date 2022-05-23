@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Models\student;
+use App\Models\Course;
+use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
   public function show(){
@@ -34,7 +36,9 @@ class StudentController extends Controller
     return view('student.student');
   }
   public function take_course(){
-    return view ('student.take_course');
+    $course  = DB::table('courses')->get();
+
+    return view ('student.take_course',['course'=>$course]);
   }
 
 }
