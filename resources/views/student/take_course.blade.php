@@ -16,22 +16,15 @@
         @csrf
       <label for="subject">Please Choose Subject</label>
       <br>
-      <table>
-        <tr>
-          <th>Course Name</th>
-          <th>Faculty Name</th>
-          <th>Section</th>
-          <th>Select</th>
-        </tr>
+
       @foreach ($course as $course)
-          <tr>
-            <td>{{$course->course_name}}</td>
-            <td>{{$course->supervisor_name}}</td>
-            <td>{{$course->section}}</td>
-          </tr>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="course" id="course">
+            <label class="form-check-label" for="flexRadioDefault">
+              Subject:{{$course->course_name}} Faculty:{{$course->supervisor_name}} Section:{{$course->section}}
+          </div>
       @endforeach
-      </table>
-      </form>
+
 
 
 
