@@ -19,6 +19,7 @@
           <label for="password">password</label>
           <input type="password" name="password" id="password" class="form-control">
         </div>
+        <br>
         <div class="form-group">
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
