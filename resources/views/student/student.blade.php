@@ -6,10 +6,9 @@
     <title>student</title>
   </head>
   <div class="container">
-
   <body>
     <h1>Student Page</h1>
-    <input type="button" onclick="window.location.href='{{route('take_course')}}';" value="Take Course">
+    <input class="btn btn-primary" type="button" onclick="window.location.href='{{route('take_course')}}';" value="Take Course">
   </div>
   </body>
 </html>
