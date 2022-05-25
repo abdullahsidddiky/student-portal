@@ -13,23 +13,23 @@
     @endphp
     @if ($user->is_admin)
       <form>
-        <input type="button" onclick="window.location.href='{{route('subject')}}';" value="Create subject" />
+        <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('subject')}}';" value="Create subject" />
       </form>
       <br>
       <form>
-        <input type="button" onclick="window.location.href='{{route('register_supervisor')}}';" value="Register Supervisor" />
+        <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('register_supervisor')}}';" value="Register Supervisor" />
       </form>
       <br>
        <form>
-          <input type="button" onclick="window.location.href='{{route('register_student')}}';" value="Register Student" />
+          <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('register_student')}}';" value="Register Student" />
         </form>
         <br>
         <form>
-          <input type="button" onclick="window.location.href='{{route('create_course')}}';" value="Create course" />
+          <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('create_course')}}';" value="Create course" />
         </form>
     @else
       <form>
-        <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register Admin" />
+        <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('register_admin')}}';" value="Register Admin" />
       </form>
     @endif
   </div>

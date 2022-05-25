@@ -29,6 +29,10 @@
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
+<<<<<<< HEAD
     </div>
+=======
+  </div>
+>>>>>>> working_branch
   </body>
 </html>

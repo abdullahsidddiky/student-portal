@@ -12,6 +12,7 @@
     </style>
   </head>
   <body>
+    <div class="container">
       <h1>Take Course</h1>
       <form action="/advising_window" method="POST">
         {{ csrf_field() }}
@@ -29,6 +30,6 @@
 
 
 
-
+   </div>
   </body>
 </html>

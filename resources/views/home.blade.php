@@ -1,3 +1,4 @@
+@extends('links_bootstrap')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,7 +6,9 @@
     <title>Home page</title>
   </head>
   <body>
+    <div class="container">
     <h1>Home Page</h1>
-     <button onclick="window.location.href='{{route('login')}}';">Login</button>
+     <button class="btn btn-primary"onclick="window.location.href='{{route('login')}}';">Login</button>
+   </div>
   </body>
 </html>
