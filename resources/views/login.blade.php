@@ -25,10 +25,7 @@
         </div>
       </div>
     </form>
-<<<<<<< HEAD
     </div>
-=======
   </div>
->>>>>>> working_branch
   </body>
 </html>
