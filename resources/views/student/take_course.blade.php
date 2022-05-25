@@ -23,6 +23,7 @@
             <input class="form-check-input" type="radio" name="course" id="course">
             <label class="form-check-label" for="flexRadioDefault">
               Subject:{{$course->course_name}} Faculty:{{$course->supervisor_name}} Section:{{$course->section}}
+              
           </div>
       @endforeach
 
