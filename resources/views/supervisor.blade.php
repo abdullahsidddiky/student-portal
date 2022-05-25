@@ -1,3 +1,4 @@
+@extends('links_bootstrap')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,6 +6,8 @@
     <title>supervisor</title>
   </head>
   <body>
+   <div class="container">
     <h1>Supervisor Page</h1>
+  </div>
   </body>
 </html>
