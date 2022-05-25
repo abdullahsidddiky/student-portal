@@ -1,3 +1,4 @@
+@extends('links_bootstrap')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,6 +6,7 @@
     <title>Registration Admin</title>
   </head>
   <body>
+    <div class="container">
     <h1>Register as Admin</h1>
     <form method="POST" action="/admin_register">
         {{ csrf_field() }}
@@ -27,5 +29,6 @@
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
+  </div>
   </body>
 </html>
