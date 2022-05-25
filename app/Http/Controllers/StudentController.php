@@ -40,5 +40,9 @@ class StudentController extends Controller
     //$faculty = DB::table('')
     return view ('student.take_course',['course'=>$course]);
   }
+  public function store_course(Request $request){
+    //$course = Course::where('id',$request->id)->get();
+    dd($request);
+  }
 
 }
