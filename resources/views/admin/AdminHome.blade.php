@@ -1,3 +1,4 @@
+@extends('links_bootstrap')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,6 +6,7 @@
     <title>Admin page</title>
   </head>
   <body>
+    <div class="container">
     <h1>Admin page</h1>
     @php
       $user = session()->get('user');
@@ -30,5 +32,6 @@
         <input type="button" onclick="window.location.href='{{route('register_admin')}}';" value="Register Admin" />
       </form>
     @endif
+  </div>
   </body>
 </html>

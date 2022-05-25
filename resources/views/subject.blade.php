@@ -1,3 +1,4 @@
+@extends('links_bootstrap')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,6 +6,7 @@
     <title>subject</title>
   </head>
   <body>
+   <div class="container">
     <h1>Create Subject</h1>
       <form action="/subject" method="POST">
         {{csrf_field()}}
@@ -18,6 +20,6 @@
           <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
-
+    </div>
   </body>
 </html>
