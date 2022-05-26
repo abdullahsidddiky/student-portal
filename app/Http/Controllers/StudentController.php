@@ -45,13 +45,12 @@ class StudentController extends Controller
     $user = auth()->user();
     $grade = new Grade();
     $course=DB::table('courses')->where('id',$request->course)->first();
-    //dd($course->course_name);
     $grade->course_name=$course->course_name;
     $grade->supervisor_name= $course->supervisor_name;
     $grade->supervisor_id= $course->supervisor_id;
     $grade->section= $course->section;
-    //dd($grade);
     dd($user);
+
   }
 
 }
