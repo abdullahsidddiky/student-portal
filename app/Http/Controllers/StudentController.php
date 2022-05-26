@@ -9,6 +9,7 @@ use App\Models\student;
 use App\Models\Course;
 use App\Models\Grade;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
 {
   public function show(){
@@ -42,13 +43,17 @@ class StudentController extends Controller
     return view ('student.take_course',['course'=>$course]);
   }
   public function store_course(Request $request){
-    $user = auth()->user();
+    $user = Auth::user();
+    //dd($user->email);
+    $student= student::where('email',$user->email)->first();
     $course = DB::table('courses')->where('id',$request->course)->first();
     $grade=new Grade();
     $grade->course_name=$course->course_name;
     $grade->supervisor_name= $course->supervisor_name;
     $grade->supervisor_id= $course->supervisor_id;
     $grade->section=$course->section;
-    dd($grade);
-  }
+    $student->grade()->save($grade);
+    //dd($user);
+
+}
 }
