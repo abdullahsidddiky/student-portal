@@ -42,7 +42,7 @@ class StudentController extends Controller
   }
   public function store_course(Request $request){
     //$course = Course::where('id',$request->id)->get();
-    dd($request);
+    dd($request->course);
   }
 
 }
