@@ -27,9 +27,6 @@
           </div>
       @endforeach
       <button type="submit" class="btn btn-success" name="button">Submit</button>
-
-
-
    </div>
   </body>
 </html>

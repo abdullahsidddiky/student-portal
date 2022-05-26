@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Models\student;
 use App\Models\Course;
+use App\Models\Grade;
 use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
@@ -40,5 +41,14 @@ class StudentController extends Controller
     //$faculty = DB::table('')
     return view ('student.take_course',['course'=>$course]);
   }
-
+  public function store_course(Request $request){
+    $user = auth()->user();
+    $course = DB::table('courses')->where('id',$request->course)->first();
+    $grade=new Grade();
+    $grade->course_name=$course->course_name;
+    $grade->supervisor_name= $course->supervisor_name;
+    $grade->supervisor_id= $course->supervisor_id;
+    $grade->section=$course->section;
+    dd($grade);
+  }
 }
