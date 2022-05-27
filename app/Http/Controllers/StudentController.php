@@ -39,12 +39,11 @@ class StudentController extends Controller
   }
   public function take_course(){
     $course  = DB::table('courses')->get();
-    //$faculty = DB::table('')
     return view ('student.take_course',['course'=>$course]);
   }
   public function store_course(Request $request){
+
     $user = Auth::user();
-    //dd($user->email);
     $student= student::where('email',$user->email)->first();
     $course = DB::table('courses')->where('id',$request->course)->first();
     $grade=new Grade();
@@ -53,7 +52,6 @@ class StudentController extends Controller
     $grade->supervisor_id= $course->supervisor_id;
     $grade->section=$course->section;
     $student->grade()->save($grade);
-    //dd($user);
 
 }
 }
