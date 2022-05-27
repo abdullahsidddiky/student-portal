@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Supervisor;
 use App\Models\Grade;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class LoginController extends Controller
 {
     public function show_logpage(){
@@ -26,9 +27,9 @@ class LoginController extends Controller
         else if($user->is_supervisor){
          $supervisor = Supervisor::where('email',$user->email)->first();
          $grade = Grade::where('supervisor_id',$supervisor->id)->get();
-         $grouped = Grade::where('supervisor_id',$supervisor->id)->distinct()->select('section')->groupBy('section')->get();
+         $unique_section_course_name = Grade::select(['course_name','section'])->where('supervisor_id',$supervisor->id)->distinct('section')->get();
          return redirect()->route('supervisor_page',[$user->name])->with('grade',$grade)
-         ->with('supervisor',$supervisor)->with('grouped',$grouped);
+         ->with('supervisor',$supervisor)->with('unique_section_course_name',$unique_section_course_name);
         }
 
         else {

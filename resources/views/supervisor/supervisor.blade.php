@@ -7,18 +7,15 @@
   </head>
   <body>
     @php
-    use App\Models\Grade;
-    use App\Models\Supervisor;
       $grade= session()->get('grade');
       $supervisor=session()->get('supervisor');
-      $g = session()->get('grouped');
+      $unique_section_course_name = session()->get('unique_section_course_name');
     @endphp
-    {{$grade}}
-    {{$supervisor}}
+
     <br>
     <br>
     <br>
-{{$g}}
+{{$unique_section_course_name}}
    <div class="container">
     <h1>Supervisor Page</h1>
     <table class="table table-striped table-hover">
@@ -27,5 +24,3 @@
   </div>
   </body>
 </html>
-$grouped = $things->groupBy('type');
-Machine::groupBy('category')->get();
