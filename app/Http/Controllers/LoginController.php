@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Supervisor;
+use App\Models\Grade;
 use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
@@ -22,11 +24,12 @@ class LoginController extends Controller
         return redirect()->route('adminhome',[$user->name])->with('user',$user);
         }
         else if($user->is_supervisor){
-          return redirect()->route('supervisor_page',[$user->name])->with('user',$user);
+         $supervisor = Supervisor::where('email',$user->email)->first();
+         $grade = Grade::where('supervisor_id',$supervisor->id)->get();
+          return redirect()->route('supervisor_page',[$user->name])->with('supervisor',$grade);
+
         }
-        /*else if(($user->is_admin && $user->is_supervisor) == FALSE){
-            return redirect()->route('student_page',[$user->name])->with('user',$user);
-        }*/
+
         else {
           return redirect()->route('student_page',[$user->name])->with('user',$user);
         }
