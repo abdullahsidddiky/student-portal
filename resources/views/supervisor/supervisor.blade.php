@@ -7,9 +7,18 @@
   </head>
   <body>
     @php
-      $supervisor= session()->get('supervisor');
+    use App\Models\Grade;
+    use App\Models\Supervisor;
+      $grade= session()->get('grade');
+      $supervisor=session()->get('supervisor');
+      $g = session()->get('grouped');
     @endphp
+    {{$grade}}
     {{$supervisor}}
+    <br>
+    <br>
+    <br>
+{{$g}}
    <div class="container">
     <h1>Supervisor Page</h1>
     <table class="table table-striped table-hover">
@@ -18,3 +27,5 @@
   </div>
   </body>
 </html>
+$grouped = $things->groupBy('type');
+Machine::groupBy('category')->get();

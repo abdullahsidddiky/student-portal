@@ -26,20 +26,19 @@ class LoginController extends Controller
         else if($user->is_supervisor){
          $supervisor = Supervisor::where('email',$user->email)->first();
          $grade = Grade::where('supervisor_id',$supervisor->id)->get();
-          return redirect()->route('supervisor_page',[$user->name])->with('supervisor',$grade);
-
+         $grouped = Grade::where('supervisor_id',$supervisor->id)->distinct()->select('section')->groupBy('section')->get();
+         return redirect()->route('supervisor_page',[$user->name])->with('grade',$grade)
+         ->with('supervisor',$supervisor)->with('grouped',$grouped);
         }
 
         else {
           return redirect()->route('student_page',[$user->name])->with('user',$user);
         }
-
       }
       else {
       return back()->withErrors([
              'email' => 'The provided credentials do not match our records.',
          ])->onlyInput('email');
        }
-
 }
 }
