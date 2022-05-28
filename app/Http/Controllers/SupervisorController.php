@@ -34,7 +34,7 @@ class SupervisorController extends Controller
       return view('supervisor.supervisor');
     }
     public function get_section_id(Request $request){
-      dd($request->input('section'));
+      dd($request->input('id'));
     }
     public function student_list_section(){
       return view('supervisor.section');
