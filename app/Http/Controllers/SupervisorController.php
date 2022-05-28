@@ -43,7 +43,7 @@ class SupervisorController extends Controller
     public function update_grade($id){
       $student=Grade::where('student_id',$id)->first();
       $students=Grade::where('section',$student->section)->get();
-      
+      return view('supervisor.update',['student'=>$student]);
     }
 
 }
