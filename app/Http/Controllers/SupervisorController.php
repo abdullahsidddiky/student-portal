@@ -33,6 +33,9 @@ class SupervisorController extends Controller
     public function redirect_supervisor_page(){
       return view('supervisor.supervisor');
     }
+    public function get_section_id(Request $request){
+      dd($request->input('section'));
+    }
     public function student_list_section(){
       return view('supervisor.section');
     }

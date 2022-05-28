@@ -30,10 +30,13 @@
       <td>{{$value->course_name}}</td>
       <td>{{$value->section}}</td>
       <td>
-        <form  action="{{route('student_list_section')}}" >
-          <button type="submit" name="button" value="{{$value->id}}">Link</button>
-        </form>
+        <form  action="{{route('get_section_id')}}" method="POST">
+            {{csrf_field()}}
+          <input type="hidden" name="section" value="{{$value->id}}">
+          <button type="submit" name="button">Link</button>
 
+
+          </form>
       </td>
     </tr>
       @endforeach
