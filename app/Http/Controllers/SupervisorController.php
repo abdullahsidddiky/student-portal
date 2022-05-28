@@ -46,7 +46,9 @@ class SupervisorController extends Controller
       return view('supervisor.update',['student'=>$student]);
     }
     public function post_grade(Request $request){
-      dd($request);
+      dd($request->student_id);
+
+      $student= Grade::where('student_id',$request->student_id)->get();
     }
 
 }
