@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Grade;
 use App\Models\Supervisor;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 class SupervisorController extends Controller
 {
     //
@@ -34,7 +36,15 @@ class SupervisorController extends Controller
       return view('supervisor.supervisor');
     }
     public function get_section_id(Request $request){
-      dd($request->input('id'));
+    //  $s = (int)$request->input('section');
+      //dd($s);
+      $students= Grade::where('section',$request->input('section'))->get();
+      //$students= DB::table('grades')->where('section',$request->input('section'))->get();
+      //dd($request->input('section'));
+      //dd($students);
+
+      return view('supervisor.student_list_section',['students'=>$students]);
+    //  return view('supervisor.student_list_section')->with('students',$students);
     }
     public function student_list_section(){
       return view('supervisor.section');

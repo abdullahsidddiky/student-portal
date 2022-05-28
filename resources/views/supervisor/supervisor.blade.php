@@ -32,8 +32,8 @@
       <td>
         <form  action="{{route('get_section_id')}}" method="POST">
             {{csrf_field()}}
-          <input type="hidden" name="id" value="{{$value->id}}">
-          <button type="submit" name="button">Link</button>
+          <input type="hidden" name="section" value="{{$value->section}}">
+          <button type="submit" name="button" class="btn btn-primary">Link</button>
 
 
           </form>
