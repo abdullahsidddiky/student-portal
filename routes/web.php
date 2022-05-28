@@ -37,6 +37,7 @@ Route::post('/login',[LoginController::class,'show_logged'])->name('logged');
 Route::get('/supervisor_register',[SupervisorController::class,'show'])->name('register_supervisor');
 Route::post('/supervisor_register',[SupervisorController::class, 'store_supervisor']);
 Route::get('/supervisor',[SupervisorController::class,'redirect_supervisor_page'])->name('supervisor_page');
+Route::get('/section',[SupervisorController::class,'student_list_section'])->name('student_list_section');
 
 Route::get('/student_register',[StudentController::class,'show'])->name('register_student');
 Route::post('/student_register',[StudentController::class,'store_student']);

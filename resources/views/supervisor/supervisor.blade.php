@@ -29,7 +29,12 @@
       <td>{{$loop->index+1}}</td>
       <td>{{$value->course_name}}</td>
       <td>{{$value->section}}</td>
-      <td><button type="button" class="btn btn-link">Link</button></td>
+      <td>
+        <form  action="{{route('student_list_section')}}" >
+          <button type="submit" name="button" value="{{$value->id}}">Link</button>
+        </form>
+
+      </td>
     </tr>
       @endforeach
 
