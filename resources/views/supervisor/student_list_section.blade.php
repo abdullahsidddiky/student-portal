@@ -23,7 +23,13 @@
             <td>{{$students->course_name}}</td>
             <td>{{$students->section}}</td>
             <td>{{$students->grade}}</td>
-            <td></td>
+            <td>
+              <form  action="{{route('get_section_id')}}" method="POST">
+                {{csrf_field()}}
+                <input type="hidden" name="section" value="">
+                <button type="submit" name="button" class="btn btn-primary">Link</button>
+              </form>
+            </td>
           </tr>
         @endforeach
       </table>
