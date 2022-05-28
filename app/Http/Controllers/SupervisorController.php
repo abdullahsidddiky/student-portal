@@ -36,12 +36,8 @@ class SupervisorController extends Controller
       return view('supervisor.supervisor');
     }
     public function get_section_id(Request $request){
-
       $students= Grade::where('section',$request->input('section'))->get();
-
-
       return view('supervisor.student_list_section',['students'=>$students]);
-    
     }
     public function student_list_section(){
     //  return view('supervisor.section');

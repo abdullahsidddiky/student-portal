@@ -24,10 +24,10 @@
             <td>{{$students->section}}</td>
             <td>{{$students->grade}}</td>
             <td>
-              <form  action="{{route('get_section_id')}}" method="POST">
+              <form  action="{{route('update_grade')}}" method="POST">
                 {{csrf_field()}}
-                <input type="hidden" name="section" value="">
-                <button type="submit" name="button" class="btn btn-primary">Link</button>
+                <input type="hidden" name="section" value="{{$students->student_id}}">
+                <button type="submit" name="button" class="btn btn-primary">Update Grade</button>
               </form>
             </td>
           </tr>
