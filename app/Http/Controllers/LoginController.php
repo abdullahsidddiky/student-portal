@@ -27,7 +27,7 @@ class LoginController extends Controller
         else if($user->is_supervisor){
          $supervisor = Supervisor::where('email',$user->email)->first();
          $grade = Grade::where('supervisor_id',$supervisor->id)->get();
-         $unique_section_course_name = Grade::select(['course_name','section'])->where('supervisor_id',$supervisor->id)->distinct('section')->get();
+         $unique_section_course_name = Grade::select(['id','course_name','section'])->where('supervisor_id',$supervisor->id)->distinct('section')->get();
          return redirect()->route('supervisor_page',[$user->name])->with('grade',$grade)
          ->with('supervisor',$supervisor)->with('unique_section_course_name',$unique_section_course_name);
         }

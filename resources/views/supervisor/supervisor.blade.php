@@ -14,26 +14,21 @@
    <div class="container">
     <h1>Supervisor Page</h1>
     <table class="table table-striped table-hover">
-      <thead>
+
         <tr>
           <th scope="col">Index</th>
           <th scope="col">Course Name</th>
           <th scope="col">Section</th>
         </tr>
-      </thead>
+
 
       @foreach ($unique_section_course_name as $value)
 
-      <tbody>
-        <tr>
-          <th scope="col"></th>
-          <td>Mark</td>
-        </tr>
-        <tr>
-          <th scope="col"></th>
-          <td>Jacob</td>
-        </tr>
-      </tbody>
+    <tr>
+      <td>{{$loop->index+1}}</td>
+      <td>{{$value->course_name}}</td>
+      <td>{{$value->section}}</td>
+    </tr>
       @endforeach
 
     </table>
