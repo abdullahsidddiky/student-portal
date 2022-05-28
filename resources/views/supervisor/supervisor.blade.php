@@ -19,6 +19,7 @@
           <th scope="col">Index</th>
           <th scope="col">Course Name</th>
           <th scope="col">Section</th>
+          <th scope="col">Section Link</th>
         </tr>
 
 
@@ -28,6 +29,7 @@
       <td>{{$loop->index+1}}</td>
       <td>{{$value->course_name}}</td>
       <td>{{$value->section}}</td>
+      <td><button type="button" class="btn btn-link">Link</button></td>
     </tr>
       @endforeach
 
