@@ -13,12 +13,13 @@
       <h3>Course Name:{{$student->course_name}}</h3>
       <h3>Section:{{$student->section}}</h3>
       <h3>Grade:
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" name="gpa">
             <option selected>Select Grade</option>
             <option value="4.0">A</option>
             <option value="3.5">A-</option>
             <option value="3.0">B</option>
           </select></h3>
+      <button type="submit" name="submit" class="btn btn-success">Update Grade</button>
     </div>
 
   </body>
