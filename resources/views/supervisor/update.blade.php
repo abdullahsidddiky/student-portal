@@ -9,18 +9,27 @@
     <div class="container">
       <h1>Update Student Grade</h1>
       <h2>Student Information</h2>
-      <h3>Student ID:{{$student->id}}</h3>
+      <h3>Student ID:{{$student->student_id}}</h3>
       <h3>Course Name:{{$student->course_name}}</h3>
       <h3>Section:{{$student->section}}</h3>
-      <h3>Grade:
-        <select class="form-select" name="gpa">
-            <option selected>Select Grade</option>
-            <option value="4.0">A</option>
-            <option value="3.5">A-</option>
-            <option value="3.0">B</option>
-          </select></h3>
-      <button type="submit" name="submit" class="btn btn-success">Update Grade</button>
-    </div>
 
+        <form action="/update_grade/" method="POST" class="form-group">
+          {{csrf_field()}}
+          <div class="form-group">
+            <input type="hidden" name="student_id" value="{{$student->id}}">
+            <label for="gpa" >Grade</label>
+            <input list="gpa" name="gpa">
+            <datalist id="gpa" name = "gpa">
+                <option value=4.0></option>
+                <option value=3.5></option>
+                <option value=3.0></option>
+            </datalist>
+          </div>
+
+        <div class="form-group">
+        <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+          </form>
+    </div>
   </body>
 </html>
