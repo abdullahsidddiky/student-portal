@@ -39,11 +39,9 @@ class SupervisorController extends Controller
       $students= Grade::where('section',$request->input('section'))->get();
       return view('supervisor.student_list_section',['students'=>$students]);
     }
-    public function student_list_section(){
-    //  return view('supervisor.section');
-    }
-    public function update_grade(){
 
+    public function update_grade($id){
+      echo $id;
     }
 
 }

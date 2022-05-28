@@ -24,11 +24,7 @@
             <td>{{$students->section}}</td>
             <td>{{$students->grade}}</td>
             <td>
-              <form  action="{{route('update_grade')}}" method="POST">
-                {{csrf_field()}}
-                <input type="hidden" name="section" value="{{$students->student_id}}">
-                <button type="submit" name="button" class="btn btn-primary">Update Grade</button>
-              </form>
+              <a href="{{route('update_grade',['id'=>$students->student_id])}}" class="btn btn-primary stretched-link">Go somewhere</a>
             </td>
           </tr>
         @endforeach
