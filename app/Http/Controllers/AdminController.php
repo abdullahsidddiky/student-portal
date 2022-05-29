@@ -70,4 +70,8 @@ class AdminController extends Controller
        $faculty->courses()->save($course);
 
     }
+    public function delete_supervisor(){
+        $supervisors = DB::table('supervisors')->get();
+        return view('admin.supervisor_delete',['supervisors'=>$supervisors]);
+    }
 }

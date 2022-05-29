@@ -30,6 +30,7 @@ Route::get('/course',[AdminController::class,'course'])->name('create_course');
 Route::post('/course',[AdminController::class,'store_course']);
 Route::get('/subject',[AdminController::class,'subject'])->name('subject');
 Route::post('/subject',[AdminController::class,'store_subject'])->name('store_subject');
+Route::get('/delete_supervisor',[AdminController::class,'delete_supervisor'])->name('delete_supervisor');
 
 Route::get('/login',[LoginController::class,'show_logpage'])->name('login');
 Route::post('/login',[LoginController::class,'show_logged'])->name('logged');

@@ -27,6 +27,10 @@
         <form>
           <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('create_course')}}';" value="Create course" />
         </form>
+        <br>
+        <form>
+          <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('delete_supervisor')}}';" value="Delete Supervisor" />
+        </form>
     @else
       <form>
         <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('register_admin')}}';" value="Register Admin" />
