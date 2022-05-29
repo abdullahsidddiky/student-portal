@@ -51,10 +51,19 @@ class SupervisorController extends Controller
      ->where('section',$request->section)
      ->update(['grade'=>$request->gpa]);
      $students = Grade::where('section',$request->section)->get();
-     //dd($students);
-     //return redirect()->route('student_page',[$user->name])->with('user',$user);
 
       return view('supervisor.student_list_section',['students'=>$students]);
+    }
+
+    public function get_section_list($supervisor_name){
+      $user= User::where('name',$supervisor_name)->first();
+      $supervisor = Supervisor::where('email',$user->email)->first();
+      $grade = Grade::where('supervisor_id',$supervisor->id)->get();
+      $unique_section_course_name = Grade::select(['id','course_name','section'])
+      ->where('supervisor_id',$supervisor->id)->distinct('section')->get();
+      return redirect()->route('supervisor_page',[$user->name])->with('grade',$grade)
+      ->with('supervisor',$supervisor)
+      ->with('unique_section_course_name',$unique_section_course_name);
     }
 
 }

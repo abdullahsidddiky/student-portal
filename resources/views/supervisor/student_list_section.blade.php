@@ -29,7 +29,7 @@
           </tr>
         @endforeach
       </table>
-      <button type="button" name="button" class="btn btn-info">View Your Section</button>
+      <button type="button" name="button" class="btn btn-info" onclick="window.location.href='{{route('get_section_list',['section'=>$students->supervisor_name])}}';">View Your Section</button>
     </div>
   </body>
 </html>
