@@ -76,7 +76,6 @@ class AdminController extends Controller
     }
     public function confirm_delete($id){
       $user = DB::table('users')->where('id',$id)->delete();
-      //$user->delete();
       return view('login');
     }
 }

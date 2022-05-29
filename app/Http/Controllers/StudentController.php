@@ -52,6 +52,12 @@ class StudentController extends Controller
     $grade->supervisor_id= $course->supervisor_id;
     $grade->section=$course->section;
     $student->grade()->save($grade);
-
 }
+
+  public function show_grade(){
+    $user = Auth::user();
+    $student = Student::where('user_id',$user->id)->first();
+    $grades = Grade::where('student_id',$student->id)->get();
+    return view('student.grades',['grades'=>$grades]);
+  }
 }
