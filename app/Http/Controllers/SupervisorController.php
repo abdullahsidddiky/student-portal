@@ -40,8 +40,8 @@ class SupervisorController extends Controller
       return view('supervisor.student_list_section',['students'=>$students]);
     }
 
-    public function update_grade($id){
-      $student=Grade::where('student_id',$id)->first();
+    public function update_grade($id, $section){
+      $student=Grade::where('section',$section)->where('student_id',$id)->first();
       $students=Grade::where('section',$student->section)->get();
       return view('supervisor.update',['student'=>$student]);
     }
@@ -51,7 +51,7 @@ class SupervisorController extends Controller
      ->where('section',$request->section)
      ->update(['grade'=>$request->gpa]);
      $students = Grade::where('section',$request->section)->get();
-     dd($students);
+     //dd($students);
      //return redirect()->route('student_page',[$user->name])->with('user',$user);
 
       return view('supervisor.student_list_section',['students'=>$students]);

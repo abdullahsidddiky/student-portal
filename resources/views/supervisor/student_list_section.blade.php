@@ -14,8 +14,8 @@
           <th>Student ID</th>
           <th>Course_name</th>
           <th>Section</th>
-            <th>Grade</th>
-            <th>Update Grade</th>
+          <th>Grade</th>
+          <th>Update Grade</th>
         </tr>
         @foreach ($students as $students)
           <tr>
@@ -24,7 +24,7 @@
             <td>{{$students->section}}</td>
             <td>{{$students->grade}}</td>
             <td>
-              <a href="{{route('update_grade',['id'=>$students->student_id])}}" class="btn btn-primary stretched-link">Go somewhere</a>
+              <a href="{{route('update_grade',['id'=>$students->student_id,'section'=>$students->section])}}" class="btn btn-primary stretched-link">Go somewhere</a>
             </td>
           </tr>
         @endforeach

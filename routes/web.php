@@ -38,7 +38,7 @@ Route::get('/supervisor_register',[SupervisorController::class,'show'])->name('r
 Route::post('/supervisor_register',[SupervisorController::class, 'store_supervisor']);
 Route::get('/supervisor',[SupervisorController::class,'redirect_supervisor_page'])->name('supervisor_page');
 Route::post('/supervisor',[SupervisorController::class,'get_section_id'])->name('get_section_id');
-Route::get('/update_grade/{id}',[SupervisorController::class,'update_grade'])->name('update_grade');
+Route::get('/update_grade/{id}/{section}',[SupervisorController::class,'update_grade'])->name('update_grade');
 Route::post('/update_grade/{id}',[SupervisorController::class,'post_grade'])->name('update_grade_post');
 
 Route::get('/student_register',[StudentController::class,'show'])->name('register_student');
