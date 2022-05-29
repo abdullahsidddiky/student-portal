@@ -30,7 +30,8 @@ Route::get('/course',[AdminController::class,'course'])->name('create_course');
 Route::post('/course',[AdminController::class,'store_course']);
 Route::get('/subject',[AdminController::class,'subject'])->name('subject');
 Route::post('/subject',[AdminController::class,'store_subject'])->name('store_subject');
-Route::get('/delete_user',[AdminController::class,'delete_supervisor'])->name('delete_user');
+Route::get('/delete_user',[AdminController::class,'delete_user'])->name('delete_user');
+Route::get('/delete_user/{id}',[AdminController::class,'confirm_delete'])->name('confirm_delete');
 
 Route::get('/login',[LoginController::class,'show_logpage'])->name('login');
 Route::post('/login',[LoginController::class,'show_logged'])->name('logged');

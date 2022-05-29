@@ -13,6 +13,7 @@
           <th>User ID</th>
           <th>User Name</th>
           <th>Email</th>
+          <th>Delete</th>
         </tr>
         @foreach ($users as $user)
           <tr>
@@ -20,6 +21,10 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>
+              <form class="form-group" action="/delete_user" method="POST">
+                <a href="{{route('confirm_delete',['id'=>$user->id])}}"
+                  class="btn btn-primary stretched-link">Delete</a>
+              </form>
             </td>
           </tr>
         @endforeach
