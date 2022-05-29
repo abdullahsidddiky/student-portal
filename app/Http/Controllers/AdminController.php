@@ -71,7 +71,7 @@ class AdminController extends Controller
 
     }
     public function delete_supervisor(){
-        $supervisors = DB::table('supervisors')->get();
-        return view('admin.supervisor_delete',['supervisors'=>$supervisors]);
+        $users = DB::table('users')->get();
+        return view('admin.user_delete',['users'=>$users]);
     }
 }

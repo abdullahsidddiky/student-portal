@@ -29,7 +29,7 @@
         </form>
         <br>
         <form>
-          <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('delete_supervisor')}}';" value="Delete Supervisor" />
+          <input type="button" class="btn btn-primary" onclick="window.location.href='{{route('delete_user')}}';" value="Delete User" />
         </form>
     @else
       <form>
