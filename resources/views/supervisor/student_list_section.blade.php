@@ -29,6 +29,7 @@
           </tr>
         @endforeach
       </table>
+      <button type="button" name="button" class="btn btn-info">View Your Section</button>
     </div>
   </body>
 </html>
