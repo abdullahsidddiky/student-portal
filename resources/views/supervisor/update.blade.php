@@ -16,6 +16,7 @@
           {{csrf_field()}}
           <div class="form-group">
             <input type="hidden" name="student_id" value="{{$student->student_id}}">
+            <input type="hidden" name="section" value="{{$student->section}}">
             <label for="gpa" >Grade</label>
             <input list="gpa" name="gpa">
             <datalist id="gpa" name = "gpa">
