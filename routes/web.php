@@ -30,6 +30,8 @@ Route::get('/course',[AdminController::class,'course'])->name('create_course');
 Route::post('/course',[AdminController::class,'store_course']);
 Route::get('/subject',[AdminController::class,'subject'])->name('subject');
 Route::post('/subject',[AdminController::class,'store_subject'])->name('store_subject');
+Route::get('/delete_user',[AdminController::class,'delete_user'])->name('delete_user');
+Route::get('/delete_user/{id}',[AdminController::class,'confirm_delete'])->name('confirm_delete');
 
 Route::get('/login',[LoginController::class,'show_logpage'])->name('login');
 Route::post('/login',[LoginController::class,'show_logged'])->name('logged');
@@ -37,9 +39,17 @@ Route::post('/login',[LoginController::class,'show_logged'])->name('logged');
 Route::get('/supervisor_register',[SupervisorController::class,'show'])->name('register_supervisor');
 Route::post('/supervisor_register',[SupervisorController::class, 'store_supervisor']);
 Route::get('/supervisor',[SupervisorController::class,'redirect_supervisor_page'])->name('supervisor_page');
+Route::post('/supervisor',[SupervisorController::class,'get_section_id'])->name('get_section_id');
+Route::get('/update_grade/{id}/{section}',[SupervisorController::class,'update_grade'])->name('update_grade');
+Route::post('/update_grade/{id}',[SupervisorController::class,'post_grade'])->name('update_grade_post');
+Route::get('/supervisor/{section}',[SupervisorController::class,'get_section_list'])->name('get_section_list');
 
 Route::get('/student_register',[StudentController::class,'show'])->name('register_student');
 Route::post('/student_register',[StudentController::class,'store_student']);
 Route::get('/student',[StudentController::class,'redirect_student_page'])->name('student_page');
 Route::get('/advising_window',[StudentController::class,'take_course'])->name('take_course');
 Route::post('/advising_window',[StudentController::class,'store_course'])->name('store_course');
+<<<<<<< HEAD
+=======
+Route::get('/grade',[StudentController::class,'show_grade'])->name('show_grade');
+>>>>>>> working_branch

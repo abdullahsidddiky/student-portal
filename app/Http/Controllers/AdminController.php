@@ -70,4 +70,12 @@ class AdminController extends Controller
        $faculty->courses()->save($course);
 
     }
+    public function delete_user(){
+        $users = DB::table('users')->get();
+        return view('admin.user_delete',['users'=>$users]);
+    }
+    public function confirm_delete($id){
+      $user = DB::table('users')->where('id',$id)->delete();
+      return view('login');
+    }
 }

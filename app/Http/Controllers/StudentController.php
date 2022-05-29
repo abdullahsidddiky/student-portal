@@ -9,6 +9,7 @@ use App\Models\student;
 use App\Models\Course;
 use App\Models\Grade;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
 {
   public function show(){
@@ -38,10 +39,10 @@ class StudentController extends Controller
   }
   public function take_course(){
     $course  = DB::table('courses')->get();
-    //$faculty = DB::table('')
     return view ('student.take_course',['course'=>$course]);
   }
   public function store_course(Request $request){
+<<<<<<< HEAD
     $user = auth()->user();
     $grade = new Grade();
     $course=DB::table('courses')->where('id',$request->course)->first();
@@ -52,5 +53,24 @@ class StudentController extends Controller
     dd($user);
 
   }
+=======
+>>>>>>> working_branch
 
+    $user = Auth::user();
+    $student= student::where('email',$user->email)->first();
+    $course = DB::table('courses')->where('id',$request->course)->first();
+    $grade=new Grade();
+    $grade->course_name=$course->course_name;
+    $grade->supervisor_name= $course->supervisor_name;
+    $grade->supervisor_id= $course->supervisor_id;
+    $grade->section=$course->section;
+    $student->grade()->save($grade);
+}
+
+  public function show_grade(){
+    $user = Auth::user();
+    $student = Student::where('user_id',$user->id)->first();
+    $grades = Grade::where('student_id',$student->id)->get();
+    return view('student.grades',['grades'=>$grades]);
+  }
 }

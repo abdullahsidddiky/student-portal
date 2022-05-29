@@ -3,11 +3,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>supervisor</title>
+    <title></title>
   </head>
   <body>
-   <div class="container">
-    <h1>Supervisor Page</h1>
-  </div>
+    <div class="container">
+
+    </div>
   </body>
 </html>
