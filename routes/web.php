@@ -49,7 +49,5 @@ Route::post('/student_register',[StudentController::class,'store_student']);
 Route::get('/student',[StudentController::class,'redirect_student_page'])->name('student_page');
 Route::get('/advising_window',[StudentController::class,'take_course'])->name('take_course');
 Route::post('/advising_window',[StudentController::class,'store_course'])->name('store_course');
-<<<<<<< HEAD
-=======
 Route::get('/grade',[StudentController::class,'show_grade'])->name('show_grade');
->>>>>>> working_branch
+//Route::get('/grades'[])
